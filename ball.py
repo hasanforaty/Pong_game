@@ -15,3 +15,7 @@ class Ball(Turtle):
     def bounce(self):
         head = self.heading() - 90
         self.setheading(head)
+
+    def reset(self):
+        self.goto(0, 0)
+        self.bounce()
