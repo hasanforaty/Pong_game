@@ -19,5 +19,5 @@ A simple implementation of the classic Pong game using Python and the Turtle gra
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/hasanforaty/simple-pong-game.git
+git clone https://github.com/hasanforaty/Pong_game.git
 ```
