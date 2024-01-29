@@ -39,8 +39,21 @@ screen.onkeypress(
 )
 
 game_is_on = True
+
+
+def game_over():
+    global game_is_on
+    scoreboard.game_over()
+    game_is_on = False
+    screen.update()
+
+
+screen.onkeypress(
+    game_over,
+    'q'
+)
 while game_is_on:
-    sleep(0.1)
+    sleep(ball.move_speed)
     screen.update()
     ball.move()
 
@@ -48,12 +61,12 @@ while game_is_on:
         ball.bounce()
     if ball.distance(left_paddle) < 50 and ball.xcor() < -330 or (ball.distance(paddle) < 50 and ball.xcor() > 330):
         ball.bounce()
+        ball.speed_up()
     if ball.xcor() > 380:
         scoreboard.l_scored()
         ball.reset()
     if ball.xcor() < -380:
         scoreboard.r_scored()
         ball.reset()
-
 
 screen.exitonclick()
